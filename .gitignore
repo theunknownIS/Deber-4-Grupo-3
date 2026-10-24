@@ -1,0 +1,10 @@
+# Compilados: se suben solo en la entrega final
+bin/
+*.class
+
+# IDE y sistema
+.idea/
+*.iml
+out/
+.DS_Store
+Thumbs.db
