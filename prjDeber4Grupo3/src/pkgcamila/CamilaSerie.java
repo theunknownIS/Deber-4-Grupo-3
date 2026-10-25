@@ -123,4 +123,21 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SN17: Número de Lucas 2 1 3 4 7 11
+     * <p>
+     * Imprime 2 1 3 4 7 11 
+     * @param n número de términos que se van a imprimir
+     */
+
+    public void g3Sn17ImprimirNumeroDeLucas(int n){
+        int numeroAnterior = 2, numeroActual = 1;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(numeroAnterior + " ");
+            int cambio = numeroAnterior + numeroActual;
+            numeroAnterior = numeroActual;
+            numeroActual = cambio;
+        }
+        System.out.println();
+    }
 }
