@@ -14,5 +14,7 @@ public class KleimerController {
         KleimerSerie serie = new KleimerSerie();
         System.out.println("SC02. Grupos de signos:");
         serie.g3Sc02GruposSignos(n);
+        System.out.println("SC04. Operadores cíclicos:");
+        serie.g3Sc04OperadoresCiclicos(n);
     }
 }
