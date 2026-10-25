@@ -28,9 +28,11 @@ public class CamilaSerie {
                 for (int i = 0; i < numero; i++) {
                     System.out.print("+");
                 }
-                System.out.print(" ");
             }
             numero++;
+            if (numero < n) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
@@ -47,7 +49,10 @@ public class CamilaSerie {
         char[] simbolos = { '\\', '|', '/', '-', '|' };
         for (int i = 0; i < n; i++) {
             char simboloCorrecto = simbolos[i % 5];
-            System.out.print(simboloCorrecto + " ");
+            System.out.print(simboloCorrecto);
+            if (i < n - 1) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
@@ -64,13 +69,16 @@ public class CamilaSerie {
         char letraMinuscula = 'a';
         for (int i = 1; i <= n; i++) {
             if (i % 2 != 0) {
-                System.out.print(letraMinuscula + " ");
+                System.out.print(letraMinuscula);
                 letraMinuscula += 2;
             } else {
                 int masMenos = (i / 2) % 2;
                 int simbolo = masMenos == 1 ? '+' : '-';
-                System.out.print((char) simbolo + " ");
+                System.out.print((char) simbolo);
 
+            }
+            if (i < n) {
+                System.out.print(", ");
             }
         }
         System.out.println();
@@ -90,8 +98,10 @@ public class CamilaSerie {
             for (int j = 1; j <= i; j++) {
                 System.out.print(letraInicial);
             }
-            System.out.print(" ");
             letraInicial++;
+            if (i < n) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
@@ -110,8 +120,10 @@ public class CamilaSerie {
             for (int j = 1; j <= (2 * i - 1); j++) {
                 System.out.print(letraInicial);
             }
-            System.out.print(" ");
             letraInicial++;
+            if (i < n) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
@@ -129,7 +141,9 @@ public class CamilaSerie {
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            System.out.print(" ");
+            if (i < n) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
@@ -145,10 +159,13 @@ public class CamilaSerie {
     public void g3Sn17ImprimirNumeroDeLucas(int n) {
         int numeroAnterior = 2, numeroActual = 1;
         for (int i = 1; i <= n; i++) {
-            System.out.print(numeroAnterior + " ");
+            System.out.print(numeroAnterior);
             int cambio = numeroAnterior + numeroActual;
             numeroAnterior = numeroActual;
             numeroActual = cambio;
+            if (i < n) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
@@ -164,7 +181,10 @@ public class CamilaSerie {
     public void g3Sn19ImprimirAlternancias(int n) {
         for (int i = 1; i <= n; i++) {
             int alternarios = (i % 2 != 0) ? i * i : i * i * i;
-            System.out.print(alternarios + " ");
+            System.out.print(alternarios);
+            if (i < n) {
+                System.out.print(", ");
+            }
         }
         System.out.println();
     }
