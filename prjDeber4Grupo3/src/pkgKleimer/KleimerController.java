@@ -20,5 +20,7 @@ public class KleimerController {
         serie.g3Sc06LetrasConsecutivas(n);
          System.out.println("SC08. Letras repetidas:");
         serie.g3Sc08LetrasRepetidas(n);
+        System.out.println("SC10. Letras con repetición:");
+        serie.g3Sc10LetrasConRepeticion(n);
     }
 }

@@ -63,4 +63,20 @@ public class KleimerSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
-}    
+
+  /**
+     * SC10. Letras con repetición: a, bb, ccc, dddd, ...
+     * Imprime n bloques de letras repetidas, donde la letra del término ise repite i veces.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sc10LetrasConRepeticion(int n) {
+        for (int i = 1; i <= n; i++) {
+            char letra = (char) ('a' + (i - 1));
+            for (int j = 1; j <= i; j++) {
+                System.out.print(letra);
+            }
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
+}
