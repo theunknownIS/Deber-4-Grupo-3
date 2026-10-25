@@ -71,4 +71,22 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SC013: Letra repetida creciente: A BB CCC DDDD
+     * <p>
+     * Imprime A BB CCC DDDD EEEEE FFFFFF GGGGGGG 
+     * @param n número de términos que se van a imprimir
+     */
+
+    public void g3Sc013ImprimirLetraRepetidaCreciente(int n){
+        char letraInicial = 'A';
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(letraInicial);
+            }
+            System.out.print(" ");
+            letraInicial++;
+        }
+        System.out.println();
+    }
 }
