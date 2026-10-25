@@ -16,6 +16,9 @@ public class CamilaSerieController {
         camilaSerie.g3Sc03ImprimirGruposDeSignos(n);
         System.out.print("SC05. Indicador direcional ciclico: ");
         camilaSerie.g3Sc05ImprimirIndicadorDireccionalCiclico(n);
+        System.out.print("SC07. Letra y signo alternos: ");
+        camilaSerie.g3Sc07ImprimirLetraYSignoAlternos(n);
+   
     }
     
 

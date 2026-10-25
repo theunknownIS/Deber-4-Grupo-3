@@ -37,8 +37,7 @@ public class CamilaSerie {
     /**
      * SC05: Indicador direcional ciclico \ | / - |
      * <p>
-     * Imprime ++ +++ +++++ ++++++++ .....
-     *
+     * Imprime \ | / - | \ | / - | \ | / - | \ | / - | \ | / - |
      * @param n número de términos que se van a imprimir
      */
 
@@ -50,5 +49,26 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SC07: Letra y signo alternos a + c - e + g -
+     * <p>
+     * Imprime a + c - e + g - i + k - m + o
+     * @param n número de términos que se van a imprimir
+     */
 
+    public void g3Sc07ImprimirLetraYSignoAlternos(int n){
+        char letraMinuscula = 'a';
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 != 0) {
+                System.out.print(letraMinuscula + " ");
+                letraMinuscula += 2;
+            } else {
+                int masMenos= (i / 2) % 2 ;
+               int simbolo = masMenos == 1 ? '+' : '-';
+                System.out.print((char) simbolo + " ");
+                    
+            }
+        }
+        System.out.println();
+    }
 }
