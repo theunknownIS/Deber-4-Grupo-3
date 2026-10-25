@@ -25,6 +25,8 @@ public class StevenController {
         serie.g3Sc11MostrarGruposNumeral(n);
                 System.out.println("SC16. Alternancia:");
         serie.g3Sc16MostrarAlternancia(n);
+                System.out.println("SC17. Símbolos:");
+        serie.g3Sc17MostrarSimbolos(n);
     }
 
 }

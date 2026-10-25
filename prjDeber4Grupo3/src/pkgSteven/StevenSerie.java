@@ -103,4 +103,19 @@ public class StevenSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+        /**
+     * SC17. Símbolos: +, -, *, /, %, +, -, *, /, %, ...
+     * Los 5 símbolos se repiten en ciclo; el símbolo de la posición i
+     * es el número (i mod 5) de la lista.
+     *
+     * @param n número de símbolos a mostrar
+     */
+    public void g3Sc17MostrarSimbolos(int n) {
+        String simbolos = "+-*/%";
+        for (int i = 0; i < n; i++) {
+            System.out.print(simbolos.charAt(i % 5));
+            System.out.print(i < n - 1 ? ", " : "\n");
+        }
+    }
 }
