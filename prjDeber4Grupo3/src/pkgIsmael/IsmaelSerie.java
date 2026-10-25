@@ -123,6 +123,13 @@ public class IsmaelSerie {
         System.out.println();
     }
 
+    /**
+     * SN18: Números Crecientes.
+     * <p>
+     * Imprime los primeros n números naturales crecientes: 1, 2, 4, 7, 11, 16, ...
+     * 
+     * @param n número de números que se van a imprimir
+     */
     public void g3Sn18ImprmirCreciente(int n) {
         int actual = 1;
         for (int i = 0; i < n; i++) {
