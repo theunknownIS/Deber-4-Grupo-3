@@ -70,4 +70,19 @@ public class StevenSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+        /**
+     * SC11. Grupos de #: ##, ####, ######, ########, ...
+     * El grupo i tiene 2i símbolos # (empieza con 2 y aumenta de 2 en 2).
+     *
+     * @param n número de grupos a mostrar
+     */
+    public void g3Sc11MostrarGruposNumeral(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 2 * i; j++) {
+                System.out.print("#");
+            }
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
 }
