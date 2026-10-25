@@ -30,7 +30,7 @@ public class IsmaelSerie {
      * 
      * @param n número de números triangulares que se van a imprimir
      */
-    public void g3Sn06ImprimirNumerosTriangulares(int n) {
+    public void g3Sn12ImprimirNumerosTriangulares(int n) {
 
         int actual = 0;
         for (int i = 1; i <= n; i++) {
@@ -47,8 +47,10 @@ public class IsmaelSerie {
      * SN13: Números Factoriales.
      * <p>
      * Imprime los primeros n números factoriales: 1, 2, 6, 24, 120, 720, ...
+     * <p>
      * 
-     * @param n número de números factoriales que se van a imprimir
+     * @param n número de números factoriales que se van a imprimir, solo puede
+     *          aceptar hasta 20, ya que el factorial de 21 excede el rango de long.
      */
     public void g3Sn13ImprimirFactoriales(int n) {
         long actual = 1L;
@@ -130,7 +132,7 @@ public class IsmaelSerie {
      * 
      * @param n número de números que se van a imprimir
      */
-    public void g3Sn18ImprmirCreciente(int n) {
+    public void g3Sn18ImprimirCreciente(int n) {
         int actual = 1;
         for (int i = 0; i < n; i++) {
             actual = actual + i;
