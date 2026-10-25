@@ -25,4 +25,19 @@ public class StevenSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+        /**
+     * SN08. Progresión aritmética: 3, 8, 13, 18, 23, ...
+     * Empieza en 3 y cada término suma 5 al anterior.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sn08MostrarProgresionAritmetica(int n) {
+        int termino = 3;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(termino);
+            termino += 5;
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
 }

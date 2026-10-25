@@ -14,5 +14,9 @@ public class StevenController {
         StevenSerie serie = new StevenSerie();
         System.out.println("SN02. Impares alternos con cero:");
         serie.g3Sn02MostrarImparesAlternosCero(n);
+
+            System.out.println("SN08. Progresión aritmética:");
+        serie.g3Sn08MostrarProgresionAritmetica(n);
     }
+
 }
