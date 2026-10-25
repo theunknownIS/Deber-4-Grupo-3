@@ -66,7 +66,7 @@ public class KleimerSerie {
 
   /**
      * SC10. Letras con repetición: a, bb, ccc, dddd, ...
-     * Imprime n bloques de letras repetidas, donde la letra del término ise repite i veces.
+     * Imprime n bloques de letras repetidas, donde la letra del término i se repite i veces.
      *
      * @param n número de términos a mostrar
      */
@@ -77,6 +77,26 @@ public class KleimerSerie {
                 System.out.print(letra);
             }
             System.out.print(i < n ? ", " : "\n");
+        }
+    }
+     /**
+     * SC12. Vocales repetidas: a, ee, iii, oooo, uuuuu, ...
+     * Imprime n bloques de vocales repetidas, donde la vocal del término i se repite i veces. Después de la u, la vocal reinicia en a.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sc12VocalesRepetidas(int n) {
+        String vocales = "aeiou";
+        int i = 1;
+        while (i <= n) {
+            char vocal = vocales.charAt((i - 1) % 5);
+            int j = 1;
+            while (j <= i) {
+                System.out.print(vocal);
+                j++;
+            }
+            System.out.print(i < n ? ", " : "\n");
+            i++;
         }
     }
 }
