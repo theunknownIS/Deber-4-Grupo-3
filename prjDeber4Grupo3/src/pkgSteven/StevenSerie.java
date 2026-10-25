@@ -55,4 +55,19 @@ public class StevenSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+        /**
+     * SC01. Signos alternos: +, -, +, -, +, -, ...
+     * Empieza en + y cada término cambia de signo respecto al anterior.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sc01MostrarSignosAlternos(int n) {
+        int signo = 1;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(signo > 0 ? "+" : "-");
+            signo *= -1;
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
 }

@@ -19,6 +19,8 @@ public class StevenController {
         serie.g3Sn08MostrarProgresionAritmetica(n);
                 System.out.println("SN10. Potencias:");
         serie.g3Sn10MostrarPotencias(n);
+                System.out.println("SC01. Signos alternos:");
+        serie.g3Sc01MostrarSignosAlternos(n);
     }
 
 }
