@@ -23,6 +23,8 @@ public class StevenController {
         serie.g3Sc01MostrarSignosAlternos(n);
                 System.out.println("SC11. Grupos de #:");
         serie.g3Sc11MostrarGruposNumeral(n);
+                System.out.println("SC16. Alternancia:");
+        serie.g3Sc16MostrarAlternancia(n);
     }
 
 }

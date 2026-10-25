@@ -85,4 +85,22 @@ public class StevenSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+        /**
+     * SC16. Alternancia: a, B, c, D, e, F, ...
+     * Las letras siguen el abecedario; en las posiciones impares van en
+     * minúscula y en las pares en mayúscula.
+     *
+     * @param n número de letras a mostrar
+     */
+    public void g3Sc16MostrarAlternancia(int n) {
+        for (int i = 1; i <= n; i++) {
+            char letra = (char) ('a' + i - 1);
+            if (i % 2 == 0) {
+                letra = Character.toUpperCase(letra);
+            }
+            System.out.print(letra);
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
 }
