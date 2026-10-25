@@ -84,4 +84,54 @@ public class IsmaelSerie {
         }
         System.out.println();
     }
+
+    /**
+     * SN15: Cuadrados Desplazados.
+     * <p>
+     * Imprime los primeros n números cuadrados multiplidacos por dos: 0, 2, 8, 18,
+     * 32, 50, ...
+     * 
+     * @param n número de números desplazados que se van a imprimir.
+     */
+    public void g3Sn15ImprimirCuadradosDesplazados(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(2 * (i * i));
+            if (i < n - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
+
+    /**
+     * SN16: Repetir Unidades.
+     * <p>
+     * Imprime los primeros n números naturales repitiendo la unidad de acuerdo a su
+     * posición: 1, 11, 111, 1111, ...
+     * 
+     * @param n número de números que se van a imprimir
+     */
+    public void g3Sn16RepetirUnidades(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("1");
+            }
+            if (i < n) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
+
+    public void g3Sn18ImprmirCreciente(int n) {
+        int actual = 1;
+        for (int i = 0; i < n; i++) {
+            actual = actual + i;
+            System.out.print(actual);
+            if (i < n - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
 }
