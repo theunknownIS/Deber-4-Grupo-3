@@ -22,4 +22,24 @@ public class IsmaelSerie {
         }
         System.out.println();
     }
+
+    /**
+     * SN12: Números triangulares.
+     * <p>
+     * Imprime los primeros n números triangulares: 1, 3, 6, 10, 15, 21, ...
+     * 
+     * @param n número de números triangulares que se van a imprimir
+     */
+    public void g3Sn06MostrarNumerosTriangulares(int n) {
+
+        int actual = 0;
+        for (int i = 1; i <= n; i++) {
+            actual = actual + i;
+            System.out.print(actual);
+            if (i < n) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
 }
