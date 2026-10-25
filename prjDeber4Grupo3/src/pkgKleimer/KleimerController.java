@@ -16,5 +16,7 @@ public class KleimerController {
         serie.g3Sc02GruposSignos(n);
         System.out.println("SC04. Operadores cíclicos:");
         serie.g3Sc04OperadoresCiclicos(n);
+         System.out.println("SC06. Letras consecutivas:");
+        serie.g3Sc06LetrasConsecutivas(n);
     }
 }

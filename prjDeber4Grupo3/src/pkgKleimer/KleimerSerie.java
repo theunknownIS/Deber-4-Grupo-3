@@ -33,4 +33,17 @@ public class KleimerSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+/**
+     * SC06. Letras consecutivas: a, b, c, d, ...
+     * Imprime n letras consecutivas del alfabeto, empezando en a y avanzando una letra por término.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sc06LetrasConsecutivas(int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.print((char) ('a' + (i - 1)));
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
 }
