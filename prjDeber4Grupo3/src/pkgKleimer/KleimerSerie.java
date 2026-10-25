@@ -99,4 +99,20 @@ public class KleimerSerie {
             i++;
         }
     }
+
+
+/**
+     * SC14. Alfabeto: A, B, C, D, E, ...
+     * Imprime las primeras n letras del alfabeto en mayúscula.
+     *
+     * @param n número de letras a mostrar
+     */
+    public void g3Sc14MostrarAlfabeto(int n) {
+        int i = 1;
+        do {
+            System.out.print((char) ('A' + (i - 1)));
+            System.out.print(i < n ? ", " : "\n");
+            i++;
+        } while (i <= n);
+    }
 }
