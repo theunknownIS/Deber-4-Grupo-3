@@ -40,4 +40,19 @@ public class StevenSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
+
+        /**
+     * SN10. Potencias: 3, 9, 27, 81, 243, 729, ...
+     * Empieza en 3 y cada término multiplica por 3 al anterior.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sn10MostrarPotencias(int n) {
+        long termino = 3;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(termino);
+            termino *= 3;
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
 }
