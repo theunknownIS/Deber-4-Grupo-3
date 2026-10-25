@@ -1,9 +1,10 @@
-package pkgcamila;
+package pkgCamila;
 
 /**
  * Series asignadas a Teran.Camila:
  * SC03, SC05, SC07, SC09, SC13, SC015, SN17, SN19
  */
+
 
 public class CamilaSerie {
 

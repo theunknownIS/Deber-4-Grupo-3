@@ -1,4 +1,4 @@
-package pkgcamila;
+package pkgCamila;
 
 /**
  * Ejecuta las series de Teran.Camila.
