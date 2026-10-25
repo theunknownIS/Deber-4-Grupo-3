@@ -46,4 +46,21 @@ public class KleimerSerie {
             System.out.print(i < n ? ", " : "\n");
         }
     }
-}
+
+
+  /**
+     * SC08. Letras repetidas: aa, bbbb, cccccc, dddddddd, ...
+     * Imprime n bloques de letras repetidas, donde la letra del término i se repite 2i veces.
+     *
+     * @param n número de términos a mostrar
+     */
+    public void g3Sc08LetrasRepetidas(int n) {
+        for (int i = 1; i <= n; i++) {
+            char letra = (char) ('a' + (i - 1));
+            for (int j = 1; j <= 2 * i; j++) {
+                System.out.print(letra);
+            }
+            System.out.print(i < n ? ", " : "\n");
+        }
+    }
+}    
