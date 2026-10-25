@@ -15,26 +15,36 @@ public class CamilaSerie {
      * @param n número de términos que se van a imprimir
      */
     public void g3Sc03ImprimirGruposDeSignos(int n) {
-        int numero = 2;
-        while (numero <= n) {
-            boolean esPrimo = true;
-            for (int i = 2; i <= Math.sqrt(numero); i++) {
-                if (numero % i == 0) {
-                    esPrimo = false;
-                    break;
-                }
-            }
-            if (esPrimo) {
-                for (int i = 0; i < numero; i++) {
+        int cuantosPrimos = 0;
+        int numeroActual = 2;
+        while (cuantosPrimos < n) {
+            if (esPrimo(numeroActual)) {
+                cuantosPrimos++;
+                for (int j = 0; j < numeroActual; j++) {
                     System.out.print("+");
                 }
+                System.out.print(cuantosPrimos < n ? ", " : "\n");
             }
-            numero++;
-            if (numero < n) {
-                System.out.print(", ");
+            numeroActual++;
+        }
+    }
+
+    /**
+     * Indica si un número es primo.
+     *
+     * @param evaluarNumero número a evaluar
+     * @return true si solo es divisible entre 1 y sí mismo
+     */
+    public boolean esPrimo(int evaluarNumero) {
+        if (evaluarNumero <= 1) {
+            return false;
+        }
+        for (int i = 2; i < evaluarNumero; i++) {
+            if (evaluarNumero % i == 0) {
+                return false;
             }
         }
-        System.out.println();
+        return true;
     }
 
     /**
