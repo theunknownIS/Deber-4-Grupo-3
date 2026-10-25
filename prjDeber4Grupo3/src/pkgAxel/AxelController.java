@@ -20,25 +20,25 @@ public class AxelController {
         SeriePotenciasDos potencias = new SeriePotenciasDos();
         SerieOblongos oblongos = new SerieOblongos();
 
-        System.out.println("SN01. Fibonacci:");
+        System.out.print("SN01. Fibonacci:");
         fibonacci.g3Sn01MostrarFibonacci(n);
 
-        System.out.println("SN03. Fibonacci sobre impares:");
+        System.out.print("SN03. Fibonacci sobre impares:");
         fibonacciImpares.g3Sn03MostrarFibonacciImpares(n);
 
-        System.out.println("SN04. Fibonacci sobre pares:");
+        System.out.print("SN04. Fibonacci sobre pares:");
         fibonacciPares.g3Sn04MostrarFibonacciPares(n);
 
-        System.out.println("SN05. Numeros primos:");
+        System.out.print("SN05. Numeros primos:");
         primos.g3Sn05MostrarPrimos(n);
 
-        System.out.println("SN07. Progresion aritmetica:");
+        System.out.print("SN07. Progresion aritmetica:");
         progresion.g3Sn07MostrarProgresionAritmetica(n);
 
-        System.out.println("SN09. Potencias:");
+        System.out.print("SN09. Potencias:");
         potencias.g3Sn09MostrarPotencias(n);
 
-        System.out.println("SN11. Numeros oblongos:");
+        System.out.print("SN11. Numeros oblongos:");
         oblongos.g3Sn11MostrarOblongos(n);
     }
 }
