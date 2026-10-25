@@ -24,5 +24,7 @@ public class KleimerController {
         serie.g3Sc10LetrasConRepeticion(n);
         System.out.print("SC12. Vocales repetidas: ");
         serie.g3Sc12VocalesRepetidas(n);
+         System.out.println("SC14. Alfabeto:");
+        serie.g3Sc14MostrarAlfabeto(n);
     }
 }
