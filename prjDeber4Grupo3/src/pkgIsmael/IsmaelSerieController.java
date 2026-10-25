@@ -10,7 +10,9 @@ public class IsmaelSerieController {
         System.out.print("SN12 Números triangulares: ");
         ismaelSerie.g3Sn06ImprimirNumerosTriangulares(n);
         System.out.print("SN13 Números factoriales: ");
-        ismaelSerie.g3Sn13ImmprimirFactoriales(n);
+        ismaelSerie.g3Sn13ImprimirFactoriales(n);
+        System.out.print("SN14 Signos alternos: ");
+        ismaelSerie.g3Sn14ImprimirSignosAlternos(n);
 
     }
 

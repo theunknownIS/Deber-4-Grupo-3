@@ -43,7 +43,14 @@ public class IsmaelSerie {
         System.out.println();
     }
 
-    public void g3Sn13ImmprimirFactoriales(int n) {
+    /**
+     * SN13: Números Factoriales.
+     * <p>
+     * Imprime los primeros n números factoriales: 1, 2, 6, 24, 120, 720, ...
+     * 
+     * @param n número de números factoriales que se van a imprimir
+     */
+    public void g3Sn13ImprimirFactoriales(int n) {
         long actual = 1L;
         for (int i = 0; i < n; i++) {
             actual = actual + (i * actual);
@@ -54,5 +61,27 @@ public class IsmaelSerie {
         }
         System.out.println();
 
+    }
+
+    /**
+     * SN14: Signos Alternos.
+     * <p>
+     * Imprime los primeros n números naturales alternando el singo en los pares: 1,
+     * -2, 3, -4, 5, -6, ...
+     * 
+     * @param n número de números que se van a imprimir
+     */
+    public void g3Sn14ImprimirSignosAlternos(int n) {
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                System.out.print(-1 * i);
+            } else {
+                System.out.print(i);
+            }
+            if (i < n) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
     }
 }
