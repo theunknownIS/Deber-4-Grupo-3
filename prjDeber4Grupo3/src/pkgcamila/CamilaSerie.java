@@ -89,4 +89,23 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SC09: Letras repetidas a bbb ccccc ddddddd
+     * <p>
+     * Imprime a bb ccccc ddddddd eeeeeee
+     * @param n número de términos que se van a imprimir
+     */
+
+    public void g3Sc09ImprimirLetrasRepetidas(int n){
+        char letraInicial = 'a';
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= (2*i-1); j++) {
+                System.out.print(letraInicial);
+            }
+            System.out.print(" ");
+            letraInicial++;
+        }
+        System.out.println();
+    }
+
 }

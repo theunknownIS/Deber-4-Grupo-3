@@ -20,6 +20,8 @@ public class CamilaSerieController {
         camilaSerie.g3Sc07ImprimirLetraYSignoAlternos(n);
         System.out.print("SC013. Letra repetida creciente: ");
         camilaSerie.g3Sc013ImprimirLetraRepetidaCreciente(n);
+        System.out.print("SC09. Letras repetidas: ");
+        camilaSerie.g3Sc09ImprimirLetrasRepetidas(n);
     }
     
 
