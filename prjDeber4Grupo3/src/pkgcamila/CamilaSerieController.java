@@ -26,6 +26,8 @@ public class CamilaSerieController {
         camilaSerie.g3Sc015ImprimirBloques(n);
         System.out.print("SN17. úmero de Lucas: ");
         camilaSerie.g3Sn17ImprimirNumeroDeLucas(n);
+        System.out.print("SN19. Alternancias: ");
+        camilaSerie.g3Sn19ImprimirAlternancias(n);  
     }
     
 

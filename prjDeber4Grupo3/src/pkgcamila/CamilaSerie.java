@@ -140,4 +140,18 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SN19: Alternancias 1 8 9 64 25 216
+     * <p>
+     * Imprime 1 8 9 64 25 216 49
+     * @param n número de términos que se van a imprimir
+     */
+
+    public void g3Sn19ImprimirAlternancias(int n){
+        for (int i = 1; i <= n; i++) {
+            int alternarios = (i % 2 != 0) ? i * i : i * i * i;
+            System.out.print(alternarios + " ");
+        }
+        System.out.println();
+    }
 }
