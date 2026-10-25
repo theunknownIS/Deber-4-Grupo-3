@@ -34,5 +34,21 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SC05: Indicador direcional ciclico \ | / - |
+     * <p>
+     * Imprime ++ +++ +++++ ++++++++ .....
+     *
+     * @param n número de términos que se van a imprimir
+     */
+
+    public void g3Sc05ImprimirIndicadorDireccionalCiclico(int n){
+        char[] simbolos = {'\\', '|', '/', '-', '|'};
+        for (int i = 0; i < n; i++) {
+            char simboloCorrecto = simbolos[i % 5];
+            System.out.print(simboloCorrecto + " ");
+        }
+        System.out.println();
+    }
 
 }
