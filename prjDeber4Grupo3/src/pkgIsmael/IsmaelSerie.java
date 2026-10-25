@@ -13,7 +13,7 @@ public class IsmaelSerie {
      *
      * @param n número de términos que se van a imprimir
      */
-    public void g3Sn06MostrarCuadradoPerfecto(int n) {
+    public void g3Sn06ImprimirCuadradoPerfecto(int n) {
         for (int i = 1; i <= n; i++) {
             System.out.print(i * i);
             if (i < n) {
@@ -30,7 +30,7 @@ public class IsmaelSerie {
      * 
      * @param n número de números triangulares que se van a imprimir
      */
-    public void g3Sn06MostrarNumerosTriangulares(int n) {
+    public void g3Sn06ImprimirNumerosTriangulares(int n) {
 
         int actual = 0;
         for (int i = 1; i <= n; i++) {
@@ -41,5 +41,18 @@ public class IsmaelSerie {
             }
         }
         System.out.println();
+    }
+
+    public void g3Sn13ImmprimirFactoriales(int n) {
+        long actual = 1L;
+        for (int i = 0; i < n; i++) {
+            actual = actual + (i * actual);
+            System.out.print(actual);
+            if (i < n - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+
     }
 }
