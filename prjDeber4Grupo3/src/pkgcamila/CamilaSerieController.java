@@ -1,4 +1,4 @@
-package pkgcamila;
+package pkgCamila;
 
 /**
  * Ejecuta las series de Teran.Camila.
@@ -8,6 +8,7 @@ package pkgcamila;
 public class CamilaSerieController {
     /**
      * Muestra todas las series asignadas.
+     * 
      * @param n numero de términos a generar
      */
     public void mostrarCamilaSerie(int n) {
@@ -18,17 +19,16 @@ public class CamilaSerieController {
         camilaSerie.g3Sc05ImprimirIndicadorDireccionalCiclico(n);
         System.out.print("SC07. Letra y signo alternos: ");
         camilaSerie.g3Sc07ImprimirLetraYSignoAlternos(n);
-        System.out.print("SC013. Letra repetida creciente: ");
-        camilaSerie.g3Sc013ImprimirLetraRepetidaCreciente(n);
+        System.out.print("SC13. Letra repetida creciente: ");
+        camilaSerie.g3Sc13ImprimirLetraRepetidaCreciente(n);
         System.out.print("SC09. Letras repetidas: ");
         camilaSerie.g3Sc09ImprimirLetrasRepetidas(n);
-        System.out.print("SC015. Bloques: ");
-        camilaSerie.g3Sc015ImprimirBloques(n);
+        System.out.print("SC15. Bloques: ");
+        camilaSerie.g3Sc15ImprimirBloques(n);
         System.out.print("SN17. úmero de Lucas: ");
         camilaSerie.g3Sn17ImprimirNumeroDeLucas(n);
         System.out.print("SN19. Alternancias: ");
-        camilaSerie.g3Sn19ImprimirAlternancias(n);  
+        camilaSerie.g3Sn19ImprimirAlternancias(n);
     }
-    
 
 }

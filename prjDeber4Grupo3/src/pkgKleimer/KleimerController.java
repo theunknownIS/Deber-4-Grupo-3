@@ -12,17 +12,17 @@ public class KleimerController {
      */
     public void showSeries(int n) {
         KleimerSerie serie = new KleimerSerie();
-        System.out.println("SC02. Grupos de signos:");
+        System.out.print("SC02. Grupos de signos: ");
         serie.g3Sc02GruposSignos(n);
-        System.out.println("SC04. Operadores cíclicos:");
+        System.out.print("SC04. Operadores cíclicos: ");
         serie.g3Sc04OperadoresCiclicos(n);
-         System.out.println("SC06. Letras consecutivas:");
+        System.out.print("SC06. Letras consecutivas: ");
         serie.g3Sc06LetrasConsecutivas(n);
-         System.out.println("SC08. Letras repetidas:");
+        System.out.print("SC08. Letras repetidas: ");
         serie.g3Sc08LetrasRepetidas(n);
-        System.out.println("SC10. Letras con repetición:");
+        System.out.print("SC10. Letras con repetición: ");
         serie.g3Sc10LetrasConRepeticion(n);
-        System.out.println("SC12. Vocales repetidas:");
+        System.out.print("SC12. Vocales repetidas: ");
         serie.g3Sc12VocalesRepetidas(n);
     }
 }
