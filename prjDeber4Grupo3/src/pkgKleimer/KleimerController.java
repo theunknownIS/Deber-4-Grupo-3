@@ -1,0 +1,30 @@
+package pkgKleimer;
+
+/**
+ * Ejecuta las series de Salvatierra.kleimer.
+ */
+public class KleimerController {
+
+    /**
+     * Muestra todas las series asignadas.
+     *
+     * @param n número de términos a generar
+     */
+    public void showSeries(int n) {
+        KleimerSerie serie = new KleimerSerie();
+        System.out.print("SC02. Grupos de signos: ");
+        serie.g3Sc02GruposSignos(n);
+        System.out.print("SC04. Operadores cíclicos: ");
+        serie.g3Sc04OperadoresCiclicos(n);
+        System.out.print("SC06. Letras consecutivas: ");
+        serie.g3Sc06LetrasConsecutivas(n);
+        System.out.print("SC08. Letras repetidas: ");
+        serie.g3Sc08LetrasRepetidas(n);
+        System.out.print("SC10. Letras con repetición: ");
+        serie.g3Sc10LetrasConRepeticion(n);
+        System.out.print("SC12. Vocales repetidas: ");
+        serie.g3Sc12VocalesRepetidas(n);
+        System.out.print("SC14. Alfabeto: ");
+        serie.g3Sc14MostrarAlfabeto(n);
+    }
+}
