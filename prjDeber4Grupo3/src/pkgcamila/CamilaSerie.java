@@ -107,5 +107,20 @@ public class CamilaSerie {
         }
         System.out.println();
     }
+    /**
+     * SC015: Bloques * ** *** ****
+     * <p>
+     * Imprime * ** *** **** ***** ****** ******* ********
+     * @param n número de términos que se van a imprimir
+     */
 
+    public void g3Sc015ImprimirBloques(int n){
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
 }

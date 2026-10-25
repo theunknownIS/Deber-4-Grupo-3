@@ -22,6 +22,8 @@ public class CamilaSerieController {
         camilaSerie.g3Sc013ImprimirLetraRepetidaCreciente(n);
         System.out.print("SC09. Letras repetidas: ");
         camilaSerie.g3Sc09ImprimirLetrasRepetidas(n);
+        System.out.print("SC015. Bloques: ");
+        camilaSerie.g3Sc015ImprimirBloques(n);
     }
     
 
