@@ -41,9 +41,9 @@ public class GrupoController {
         int n = 0;
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.print("Ingrese un parámetro n (n > 0): ");
+            System.out.print("Ingrese un parámetro n ( 1 a 20): ");
             n = scanner.nextInt();
-        } while (n < 1);
+        } while (n < 1 || n > 20);
         scanner.close();
         System.out.println();
         return n;
