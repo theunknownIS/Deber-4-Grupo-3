@@ -11,10 +11,12 @@ public class App {
         System.out.println(
                 "grupo-03\nIntegrantes: \nRobles.Steven\nSalvatierra.Kleimer\nSantamaria.Axel\nSilva.Ismael\nTeran.Camila\n");
         int n = 0;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese un parámetro n: ");
-        n = scanner.nextInt();
-        scanner.close();
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Ingrese un parámetro n: ");
+            n = scanner.nextInt();
+            scanner.close();
+        } while (n <= 1);
 
         IsmaelSerieController ismaelSerieController = new IsmaelSerieController();
         AxelController axelSerieController = new AxelController();
