@@ -44,7 +44,8 @@ public class GrupoController {
         do {
             System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
             while (!scanner.hasNextInt()) {
-                System.out.println("ERROR: " + scanner.next() + "no es un número entero positivo.");
+                System.out.println("ERROR: " + scanner.next() + " no es un número entero positivo.");
+                System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
             }
             n = scanner.nextInt();
             if (n < 1) {
