@@ -29,16 +29,16 @@ public class AxelController {
         System.out.print("SN04. Fibonacci sobre pares: ");
         fibonacciPares.g3Sn04MostrarFibonacciPares(n);
 
-        System.out.print("SN05. Numeros primos: ");
+        System.out.print("SN05. Números primos: ");
         primos.g3Sn05MostrarPrimos(n);
 
-        System.out.print("SN07. Progresion aritmetica: ");
+        System.out.print("SN07. Progresión aritmética: ");
         progresion.g3Sn07MostrarProgresionAritmetica(n);
 
         System.out.print("SN09. Potencias: ");
         potencias.g3Sn09MostrarPotencias(n);
 
-        System.out.print("SN11. Numeros oblongos: ");
+        System.out.print("SN11. Números oblongos: ");
         oblongos.g3Sn11MostrarOblongos(n);
     }
 }
