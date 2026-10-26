@@ -44,10 +44,16 @@ public class StevenSerie {
         /**
      * SN10. Potencias: 3, 9, 27, 81, 243, 729, ...
      * Empieza en 3 y cada término multiplica por 3 al anterior.
+     * Funciona hasta n = 39 porque 3^40 supera el máximo de long.
      *
      * @param n número de términos a mostrar
      */
     public void g3Sn10MostrarPotencias(int n) {
+                final int limite = 39;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         long termino = 3;
         for (int i = 1; i <= n; i++) {
             System.out.print(termino);
@@ -90,10 +96,16 @@ public class StevenSerie {
      * SC16. Alternancia: a, B, c, D, e, F, ...
      * Las letras siguen el abecedario; en las posiciones impares van en
      * minúscula y en las pares en mayúscula.
+     * Funciona hasta n = 26 porque el alfabeto solo tiene 26 letras.
      *
      * @param n número de letras a mostrar
      */
     public void g3Sc16MostrarAlternancia(int n) {
+                final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         for (int i = 1; i <= n; i++) {
             char letra = (char) ('a' + i - 1);
             if (i % 2 == 0) {
