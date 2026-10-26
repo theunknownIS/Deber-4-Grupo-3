@@ -43,7 +43,7 @@ public class GrupoController {
         do {
             System.out.print("Ingrese un parámetro n (n > 0): ");
             n = scanner.nextInt();
-        } while (n <= 1);
+        } while (n < 1);
         scanner.close();
         System.out.println();
         return n;
