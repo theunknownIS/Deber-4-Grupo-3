@@ -3,15 +3,21 @@ package pkgAxel;
 /**
  * SN03. Fibonacci sobre impares: 0/1, 1/3, 1/5, 2/7, 3/9, 5/11, ...
  * Arriba va Fibonacci y abajo los impares (2i + 1). Usa while.
+ * Limite: n maximo 93 (el numerador (Fibonacci) en el termino 94 supera el maximo de long).
  */
 public class SerieFibonacciImpares {
 
     /**
      * Muestra la serie de fracciones Fibonacci sobre impares.
      *
-     * @param n numero de terminos a mostrar
+     * @param n numero de terminos a mostrar (maximo 93; si se pasa, muestra un aviso y no ejecuta la serie)
      */
     public void g3Sn03MostrarFibonacciImpares(int n) {
+        final int limite = 93;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         long a = 0;
         long b = 1;
         int i = 0;
