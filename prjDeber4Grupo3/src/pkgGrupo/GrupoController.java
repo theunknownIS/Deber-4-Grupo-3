@@ -32,8 +32,9 @@ public class GrupoController {
     /**
      * Pide un parámetro por consola a través de un scanner.
      * <p>
-     * El parámetro ingresado deberá ser mayor a cero, y se repetirá hasta que se
-     * ingrese un número válido
+     * El parámetro ingresado solo sera válido si es un número entero mayor a cero.
+     * El bucle impide que el usuario ingrese un parámetro negativo o que no sea un
+     * número entero positivo.
      * 
      * @return parámetro n ingresado por el usuario
      */
@@ -41,9 +42,15 @@ public class GrupoController {
         int n = 0;
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.print("Ingrese un parámetro n ( 1 a 20): ");
+            System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("ERROR: " + scanner.next() + "no es un número entero positivo.");
+            }
             n = scanner.nextInt();
-        } while (n < 1 || n > 20);
+            if (n < 1) {
+                System.out.println("ERROR: n debe ser mayor a cero");
+            }
+        } while (n < 1);
         scanner.close();
         System.out.println();
         return n;
