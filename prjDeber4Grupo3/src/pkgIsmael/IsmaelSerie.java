@@ -10,10 +10,18 @@ public class IsmaelSerie {
      * SN06: Cuadrados perfectos.
      * <p>
      * Imprime los primeros n cuadrados perfectos: 1, 4, 9, 16, ...
-     *
+     * <p>
+     * El límite que acepta el método es 46340, pues ocurre desbordamiento del tipo
+     * de dato int.
+     * 
      * @param n número de términos que se van a imprimir
      */
     public void g3Sn06ImprimirCuadradoPerfecto(int n) {
+        final int limite = 46340;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         for (int i = 1; i <= n; i++) {
             System.out.print(i * i);
             if (i < n) {
@@ -27,11 +35,17 @@ public class IsmaelSerie {
      * SN12: Números triangulares.
      * <p>
      * Imprime los primeros n números triangulares: 1, 3, 6, 10, 15, 21, ...
+     * El límite que acepta el método es 65535, pues ocurre desbordamiento del tipo
+     * de dato int.
      * 
      * @param n número de números triangulares que se van a imprimir
      */
     public void g3Sn12ImprimirNumerosTriangulares(int n) {
-
+        final int limite = 65535;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         int actual = 0;
         for (int i = 1; i <= n; i++) {
             actual = actual + i;
@@ -53,6 +67,11 @@ public class IsmaelSerie {
      *          aceptar hasta 20, ya que el factorial de 21 excede el rango de long.
      */
     public void g3Sn13ImprimirFactoriales(int n) {
+        final int limite = 20;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         long actual = 1L;
         for (int i = 0; i < n; i++) {
             actual = actual + (i * actual);
@@ -92,10 +111,17 @@ public class IsmaelSerie {
      * <p>
      * Imprime los primeros n números cuadrados multiplidacos por dos: 0, 2, 8, 18,
      * 32, 50, ...
+     * El límite que acepta el método es 32768, pues ocurre desbordamiento del tipo
+     * de dato int.
      * 
      * @param n número de números desplazados que se van a imprimir.
      */
     public void g3Sn15ImprimirCuadradosDesplazados(int n) {
+        final int limite = 32768;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         for (int i = 0; i < n; i++) {
             System.out.print(2 * (i * i));
             if (i < n - 1) {
@@ -114,6 +140,7 @@ public class IsmaelSerie {
      * @param n número de números que se van a imprimir
      */
     public void g3Sn16RepetirUnidades(int n) {
+
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print("1");
@@ -129,10 +156,17 @@ public class IsmaelSerie {
      * SN18: Números Crecientes.
      * <p>
      * Imprime los primeros n números naturales crecientes: 1, 2, 4, 7, 11, 16, ...
+     * El límite que acepta el método es 65536, pues ocurre desbordamiento del tipo
+     * de dato int.
      * 
      * @param n número de números que se van a imprimir
      */
     public void g3Sn18ImprimirCreciente(int n) {
+        final int limite = 65536;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         int actual = 1;
         for (int i = 0; i < n; i++) {
             actual = actual + i;
