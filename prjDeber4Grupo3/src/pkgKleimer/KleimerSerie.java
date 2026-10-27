@@ -127,10 +127,16 @@ public class KleimerSerie {
 /**
      * SC14. Alfabeto: A, B, C, D, E, ...
      * Imprime las primeras n letras del alfabeto en mayúscula.
-     *
+     * Funciona hasta n = 26 porque el alfabeto solo tiene 26 letras.
+     * 
      * @param n número de letras a mostrar
      */
     public void g3Sc14MostrarAlfabeto(int n) {
+        final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         int i = 1;
         do {
             System.out.print((char) ('A' + (i - 1)));
