@@ -76,6 +76,11 @@ public class CamilaSerie {
      */
 
     public void g3Sc07ImprimirLetraYSignoAlternos(int n) {
+        final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         char letraMinuscula = 'a';
         for (int i = 1; i <= n; i++) {
             if (i % 2 != 0) {
@@ -103,6 +108,11 @@ public class CamilaSerie {
      */
 
     public void g3Sc13ImprimirLetraRepetidaCreciente(int n) {
+        final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         char letraInicial = 'A';
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
@@ -125,6 +135,11 @@ public class CamilaSerie {
      */
 
     public void g3Sc09ImprimirLetrasRepetidas(int n) {
+        final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         char letraInicial = 'a';
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= (2 * i - 1); j++) {
@@ -167,6 +182,11 @@ public class CamilaSerie {
      */
 
     public void g3Sn17ImprimirNumeroDeLucas(int n) {
+        final int limite = 45;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         int numeroAnterior = 2, numeroActual = 1;
         for (int i = 1; i <= n; i++) {
             System.out.print(numeroAnterior);
@@ -189,6 +209,11 @@ public class CamilaSerie {
      */
 
     public void g3Sn19ImprimirAlternancias(int n) {
+        final int limite = 1291;
+        if (n > limite) {
+            System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
+            return;
+        }
         for (int i = 1; i <= n; i++) {
             int alternarios = (i % 2 != 0) ? i * i : i * i * i;
             System.out.print(alternarios);
