@@ -44,7 +44,7 @@ public class KleimerSerie {
      * @param n número de términos a mostrar
      */
     public void g3Sc06LetrasConsecutivas(int n) {
-          final int limite = 26;
+        final int limite = 26;
         if (n > limite) {
             System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
             return;
@@ -64,7 +64,7 @@ public class KleimerSerie {
      * @param n número de términos a mostrar
      */
     public void g3Sc08LetrasRepetidas(int n) {
-           final int limite = 26;
+        final int limite = 26;
         if (n > limite) {
             System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
             return;
@@ -87,7 +87,7 @@ public class KleimerSerie {
      * @param n número de términos a mostrar
      */
     public void g3Sc10LetrasConRepeticion(int n) {
-         final int limite = 26;
+        final int limite = 26;
         if (n > limite) {
             System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
             return;
@@ -123,8 +123,7 @@ public class KleimerSerie {
         }
     }
 
-
-/**
+    /**
      * SC14. Alfabeto: A, B, C, D, E, ...
      * Imprime las primeras n letras del alfabeto en mayúscula.
      * Funciona hasta n = 26 porque el alfabeto solo tiene 26 letras.
@@ -142,6 +141,6 @@ public class KleimerSerie {
             System.out.print((char) ('A' + (i - 1)));
             System.out.print(i < n ? ", " : "\n");
             i++;
-        } while (i <= n);   
+        } while (i <= n);
     }
 }

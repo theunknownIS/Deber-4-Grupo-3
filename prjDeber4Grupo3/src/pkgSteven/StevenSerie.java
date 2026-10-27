@@ -26,7 +26,7 @@ public class StevenSerie {
         }
     }
 
-        /**
+    /**
      * SN08. Progresión aritmética: 3, 8, 13, 18, 23, ...
      * Empieza en 3 y cada término suma 5 al anterior.
      *
@@ -41,7 +41,7 @@ public class StevenSerie {
         }
     }
 
-        /**
+    /**
      * SN10. Potencias: 3, 9, 27, 81, 243, 729, ...
      * Empieza en 3 y cada término multiplica por 3 al anterior.
      * Funciona hasta n = 39 porque 3^40 supera el máximo de long.
@@ -49,7 +49,7 @@ public class StevenSerie {
      * @param n número de términos a mostrar
      */
     public void g3Sn10MostrarPotencias(int n) {
-                final int limite = 39;
+        final int limite = 39;
         if (n > limite) {
             System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
             return;
@@ -62,7 +62,7 @@ public class StevenSerie {
         }
     }
 
-        /**
+    /**
      * SC01. Signos alternos: +, -, +, -, +, -, ...
      * Empieza en + y cada término cambia de signo respecto al anterior.
      *
@@ -77,7 +77,7 @@ public class StevenSerie {
         }
     }
 
-        /**
+    /**
      * SC11. Grupos de #: ##, ####, ######, ########, ...
      * El grupo i tiene 2i símbolos # (empieza con 2 y aumenta de 2 en 2).
      *
@@ -92,7 +92,7 @@ public class StevenSerie {
         }
     }
 
-        /**
+    /**
      * SC16. Alternancia: a, B, c, D, e, F, ...
      * Las letras siguen el abecedario; en las posiciones impares van en
      * minúscula y en las pares en mayúscula.
@@ -101,7 +101,7 @@ public class StevenSerie {
      * @param n número de letras a mostrar
      */
     public void g3Sc16MostrarAlternancia(int n) {
-                final int limite = 26;
+        final int limite = 26;
         if (n > limite) {
             System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
             return;
@@ -116,7 +116,7 @@ public class StevenSerie {
         }
     }
 
-        /**
+    /**
      * SC17. Símbolos: +, -, *, /, %, +, -, *, /, %, ...
      * Los 5 símbolos se repiten en ciclo; el símbolo de la posición i
      * es el número (i mod 5) de la lista.
