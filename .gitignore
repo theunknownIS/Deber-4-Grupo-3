@@ -1,4 +1,4 @@
-# Compilados: se suben solo en la entrega final
+# Archivos compilados y carpeta bin se generan al compilar
 bin/
 *.class
 
