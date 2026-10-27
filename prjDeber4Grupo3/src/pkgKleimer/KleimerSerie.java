@@ -142,6 +142,6 @@ public class KleimerSerie {
             System.out.print((char) ('A' + (i - 1)));
             System.out.print(i < n ? ", " : "\n");
             i++;
-        } while (i <= n);
+        } while (i <= n);   
     }
 }
