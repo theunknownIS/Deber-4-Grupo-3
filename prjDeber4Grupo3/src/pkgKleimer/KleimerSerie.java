@@ -39,10 +39,16 @@ public class KleimerSerie {
      * SC06. Letras consecutivas: a, b, c, d, ...
      * Imprime n letras consecutivas del alfabeto, empezando en a y avanzando una
      * letra por término.
-     *
+     * Funciona hasta n = 26 porque el alfabeto solo tiene 26 letras.
+     * 
      * @param n número de términos a mostrar
      */
     public void g3Sc06LetrasConsecutivas(int n) {
+          final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         for (int i = 1; i <= n; i++) {
             System.out.print((char) ('a' + (i - 1)));
             System.out.print(i < n ? ", " : "\n");
