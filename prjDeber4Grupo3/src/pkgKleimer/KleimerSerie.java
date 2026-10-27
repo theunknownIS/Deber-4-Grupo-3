@@ -82,10 +82,16 @@ public class KleimerSerie {
      * SC10. Letras con repetición: a, bb, ccc, dddd, ...
      * Imprime n bloques de letras repetidas, donde la letra del término i se repite
      * i veces.
-     *
+     * Funciona hasta n = 26 porque el alfabeto solo tiene 26 letras.
+     * 
      * @param n número de términos a mostrar
      */
     public void g3Sc10LetrasConRepeticion(int n) {
+         final int limite = 26;
+        if (n > limite) {
+            System.out.println("Límite alcanzado: el alfabeto solo tiene 26 letras (máximo n = " + limite + ")");
+            return;
+        }
         for (int i = 1; i <= n; i++) {
             char letra = (char) ('a' + (i - 1));
             for (int j = 1; j <= i; j++) {
