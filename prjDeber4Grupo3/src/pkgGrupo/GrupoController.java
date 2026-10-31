@@ -24,6 +24,7 @@ import pkgAxel.SerieProgresionAritmetica;
  * 
  */
 public class GrupoController {
+    private Scanner scanner = new Scanner(System.in);
     private IsmaelSerie ismael = new IsmaelSerie();
     private CamilaSerie camila = new CamilaSerie();
     private KleimerSerie kleimer = new KleimerSerie();
@@ -40,7 +41,6 @@ public class GrupoController {
      */
     public int leerParametroN() {
         int n = 0;
-        Scanner scanner = new Scanner(System.in);
         do {
             System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
             while (!scanner.hasNextInt()) {
@@ -48,13 +48,20 @@ public class GrupoController {
                 System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
             }
             n = scanner.nextInt();
+            scanner.nextLine();
             if (n < 1) {
                 System.out.println("ERROR: n debe ser mayor a cero");
             }
         } while (n < 1);
-        scanner.close();
         System.out.println();
         return n;
+    }
+
+    /**
+     * @return lector de consola compartido
+     */
+    public Scanner getScanner() {
+        return scanner;
     }
 
     /**
