@@ -4,7 +4,8 @@ public class F03TrianguloIzquierdo {
 
     /**
      * F03. Triángulo izquierdo
-     * Función para imprimir un triángulo alineado hacia el lado izquierdo.
+     * <p>
+     * Imprime un triángulo alineado hacia el lado izquierdo.
      * <p>
      * Usa un bucle for para controlar las filas y otro para controlar el número de
      * caracteres por fila.
