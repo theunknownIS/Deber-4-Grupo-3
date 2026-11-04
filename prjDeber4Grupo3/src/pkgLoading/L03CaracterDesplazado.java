@@ -3,7 +3,7 @@ package pkgLoading;
 public class L03CaracterDesplazado {
 
     /**
-     * L03. Carácter que se desplaza.
+     * L03. Caracter que se desplaza.
      * <p>
      * Simula una barra de carga de 20 casillas en la que un solo carácter
      * avanza de izquierda a derecha. En cada paso se borra la casilla
@@ -34,9 +34,9 @@ public class L03CaracterDesplazado {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            System.out.println();
 
         }
+        System.out.println();
     }
 
 }
