@@ -11,20 +11,21 @@ public class R03Multiplicacion {
      * se maneja solo con la suma, por lo que funciona con cualquier
      * combinación de signos.
      * <p>
-     * 
+     * Ejemplo: g3R03Multiplicar(2, 4) = 2 + 2 + 2 + 2 + 0 = 8.
+     *
      * @param a número que se suma repetidamente
      * @param b cantidad de veces que se suma a
      * @return el producto de a por b
      * @author Silva.Ismael
      */
-    public int g3R03Multiplcar(int a, int b) {
+    public int g3R03Multiplicar(int a, int b) {
         if (b == 0) {
             return 0;
         }
         if (b < 0) {
-            return -g3R03Multiplcar(a, -b);
+            return -g3R03Multiplicar(a, -b);
         }
-        return a + g3R03Multiplcar(a, b - 1);
+        return a + g3R03Multiplicar(a, b - 1);
 
     }
 

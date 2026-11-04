@@ -2,9 +2,9 @@ package pkgFiguras;
 
 public class F18TrianguloNumerico {
     /**
-     * F18. Triángulo numérico
+     * F18. Triángulo numérico.
      * <p>
-     * Imprime un triángulo numérico cuyas cuyos elementos son la suma de dos
+     * Imprime un triángulo numérico cuyos elementos son la suma de dos
      * términos de la fila anterior.
      * <p>
      * Usa un bucle for para recorrer las filas y otro bucle for para recorrer los

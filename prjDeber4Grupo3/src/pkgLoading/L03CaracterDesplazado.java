@@ -3,13 +3,12 @@ package pkgLoading;
 public class L03CaracterDesplazado {
 
     /**
-     * L03. Caracter que se desplaza.
+     * L03. Carácter que se desplaza.
      * <p>
      * Simula una barra de carga de 20 casillas en la que un solo carácter
      * avanza de izquierda a derecha. En cada paso se borra la casilla
      * anterior y se coloca el carácter en la siguiente, mostrando el
      * porcentaje de avance desde 0% hasta 100%.
-     * <p>
      *
      * @param caracter carácter que se desplaza por la barra
      * @author Silva.Ismael
@@ -19,7 +18,6 @@ public class L03CaracterDesplazado {
         for (int i = 0; i < 20; i++) {
             arrBarra[i] = ' ';
         }
-        arrBarra[0] = caracter;
 
         for (int i = 0; i < 20; i++) {
             if (i > 0) {

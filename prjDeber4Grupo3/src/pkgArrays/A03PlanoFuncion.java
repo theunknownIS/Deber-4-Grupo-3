@@ -1,14 +1,12 @@
 package pkgArrays;
 
-import java.util.Scanner;
-
 public class A03PlanoFuncion {
 
     /**
      * A03. Plano y función f(x) = 2x con el nombre.
      * <p>
-     * Pide el nombre del usuario y dibuja un plano de coordenadas positivo
-     * usando una matriz. Cada letra del nombre se coloca una fila más arriba
+     * Dibuja un plano de coordenadas positivo usando una matriz con el
+     * nombre recibido. Cada letra del nombre se coloca una fila más arriba
      * y dos columnas más a la derecha que la anterior, formando una diagonal.
      * La fila 0 representa el eje horizontal y se dibuja con '_'.
      * <p>
@@ -18,13 +16,11 @@ public class A03PlanoFuncion {
      * Ejemplo: con el nombre "patmic" la letra 'p' queda en la fila 1 y la
      * letra 'c' en la fila 6.
      *
-     * @param scanner Scanner para leer el nombre del usuario
+     * @param nombre nombre que se dibuja sobre el plano
      * @author Silva.Ismael
      */
-    public void g3A03DibujarPlanoFuncionLetras(Scanner scanner) {
+    public void g3A03DibujarPlanoFuncionLetras(String nombre) {
 
-        System.out.print("Ingrese su nombre: ");
-        String nombre = scanner.nextLine();
         int k = nombre.length() + 1;
 
         String[][] matrizPlano = new String[k][(k * 2) - 1];

@@ -4,6 +4,12 @@ import java.util.Random;
 
 public class L11aSenalSimetrica {
 
+    /**
+     * L11a. Pausa la ejecución.
+     *
+     * @param ms milisegundos de espera
+     * @author Silva.Ismael
+     */
     private void g3Esperar(int ms) {
         try {
             Thread.sleep(ms);
@@ -26,6 +32,7 @@ public class L11aSenalSimetrica {
      */
     public void g3L11aDibujarSenalSimetrica() {
         Random random = new Random();
+        String reset = "\u001B[0m";
 
         for (int i = 1; i <= 50; i++) {
             int n = random.nextInt(11);
@@ -65,8 +72,6 @@ public class L11aSenalSimetrica {
                     color = "\u001B[91m";
                     break;
             }
-            String reset = "\u001B[0m";
-
             System.out.print(color);
             for (int j = 0; j < 10 - n; j++) {
                 System.out.print(" ");
@@ -81,8 +86,7 @@ public class L11aSenalSimetrica {
                 System.out.print("-");
                 g3Esperar(15);
             }
-            System.out.print(reset);
-            System.out.println();
+            System.out.println(reset);
             g3Esperar(100);
         }
         System.out.println();

@@ -2,7 +2,7 @@ package pkgFiguras;
 
 public class F13NumerosCrecientes {
     /**
-     * F03. Números Crecientes
+     * F13. Números crecientes.
      * <p>
      * Imprime un triángulo de números crecientes alineado hacia el lado izquierdo.
      * <p>
@@ -12,7 +12,7 @@ public class F13NumerosCrecientes {
      * @author Silva.Ismael
      * @param n es el tamaño de la figura
      */
-    public void g3F03DibujarTrianguloIzquierdo(int n) {
+    public void g3F13DibujarNumerosCrecientes(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(j);

@@ -3,7 +3,7 @@ package pkgCadenas;
 public class C03EliminarVocal {
 
     /**
-     * C03. Eliminar vocal de una frase
+     * C03. Eliminar vocal de una frase.
      * <p>
      * Recorre la frase como un arreglo de caracteres y reemplaza por un
      * espacio cada aparición de la vocal indicada. Luego imprime la frase

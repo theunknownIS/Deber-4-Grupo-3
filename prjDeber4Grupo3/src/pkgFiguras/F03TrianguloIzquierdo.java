@@ -3,7 +3,7 @@ package pkgFiguras;
 public class F03TrianguloIzquierdo {
 
     /**
-     * F03. Triángulo izquierdo
+     * F03. Triángulo izquierdo.
      * <p>
      * Imprime un triángulo alineado hacia el lado izquierdo.
      * <p>

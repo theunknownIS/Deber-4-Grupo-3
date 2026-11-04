@@ -3,12 +3,12 @@ package pkgFiguras;
 public class F08EscaleraAscendente {
 
     /**
-     * F08. Escalera Ascendente.
+     * F08. Escalera ascendente.
      * <p>
-     * Imprimer una escalera que asciende de n peldaños.
+     * Imprime una escalera que asciende de n peldaños.
      * <p>
-     * Utiliza un bucle for para controlar las filas y otro para los espacións y
-     * peldaños (___\)
+     * Utiliza un bucle for para controlar las filas y otro para los espacios y
+     * peldaños (___|).
      * 
      * @author Silva.Ismael
      * @param n tamaño de la escalera (peldaños)
