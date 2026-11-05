@@ -12,18 +12,26 @@ public class A02MatrizIniciales {
 /**
  * @param tamanio tamaño de la matriz
  * @param caracter caracter para dibujar las iniciales
+ * @param nombreCompleto nombre completo del usuario
 */
-    private String nombre = "Patricio";
-    private String apellido = "Pacha";
-
-    public void g3A02MatrizIniciales(int tamanio, char caracter) {
+    public void g3A02MatrizIniciales(String nombreCompleto, int tamanio, char caracter) {
         if (tamanio < 3) {
             System.out.println("El tamaño debe ser 3 o mayor.");
             return;
         }
+        if (nombreCompleto == null) {
+            System.out.println("Debe ingresar un nombre completo.");
+            return;
+        }
 
-        char inicialNombre = Character.toUpperCase(nombre.charAt(0));
-        char inicialApellido = Character.toUpperCase(apellido.charAt(0));
+        String[] partes = nombreCompleto.trim().split("\\s+");
+        if (partes.length < 2) {
+            System.out.println("Se requieren al menos un nombre y un apellido.");
+            return;
+        }
+
+        char inicialNombre = Character.toUpperCase(partes[0].charAt(0));
+        char inicialApellido = Character.toUpperCase(partes[partes.length - 1].charAt(0));
 
         char[][] letra1 = construirLetra(inicialNombre, tamanio, caracter);
         char[][] letra2 = construirLetra(inicialApellido, tamanio, caracter);
