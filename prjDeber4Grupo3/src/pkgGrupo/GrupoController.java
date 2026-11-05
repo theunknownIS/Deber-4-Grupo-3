@@ -14,6 +14,12 @@ import pkgAxel.SerieOblongos;
 import pkgAxel.SeriePotenciasDos;
 import pkgAxel.SeriePrimos;
 import pkgAxel.SerieProgresionAritmetica;
+import pkgFiguras.FigurasController;
+import pkgCadenas.CadenasController;
+import pkgArrays.ArraysController;
+import pkgLoading.LoadingController;
+import pkgRecursion.RecursionController;
+import pkgAutomatas.AutomatasController;
 
 /**
  * GrupoController
@@ -29,6 +35,20 @@ public class GrupoController {
     private CamilaSerie camila = new CamilaSerie();
     private KleimerSerie kleimer = new KleimerSerie();
     private StevenSerie steven = new StevenSerie();
+    private int niveles;
+    private String frase;
+    private char vocal;
+    private char letra;
+    private String nombreCompleto;
+    private int[] porcentajes;
+    private int tamanioMatriz;
+    private char caracterMatriz;
+    private char caracterCarga;
+    private int barrasSonido;
+    private int numeroRecursion;
+    private int numeroA;
+    private int numeroB;
+    private String[] cadenasAutomatas;
 
     /**
      * Pide un parámetro por consola a través de un scanner.
@@ -165,5 +185,248 @@ public class GrupoController {
         System.out.print("SC17. Símbolos: ");
         steven.g3Sc17MostrarSimbolos(n);
         System.out.println();
+    }
+
+    /**
+     * Pide por consola todos los parámetros de los ejercicios de la parte 2
+     * antes de ejecutarlos.
+     * <p>
+     * Se piden en orden: niveles de las figuras, frase, vocal y letra para
+     * las cadenas, nombre completo, porcentajes de carga, tamaño y carácter
+     * de la matriz, carácter de carga, cantidad de barras de sonido, números
+     * de la recursión y una cadena por cada autómata. El C08 es el único que
+     * pide datos durante su ejecución.
+     */
+    public void leerParametrosParte2() {
+        System.out.println("=== Parámetros de figuras ===");
+        niveles = leerEntero("Ingrese el tamaño/niveles de las figuras (entero mayor a 0): ", 1);
+
+        System.out.println("=== Parámetros de cadenas ===");
+        frase = leerTexto("Ingrese una frase: ");
+        vocal = leerVocal("Ingrese una vocal: ");
+        letra = leerLetra("Ingrese una letra: ");
+
+        System.out.println("=== Parámetros de arrays y loading ===");
+        nombreCompleto = leerNombreCompleto("Ingrese su nombre completo (nombre y apellido): ");
+        porcentajes = leerPorcentajes(nombreCompleto);
+        tamanioMatriz = leerEntero("Ingrese el tamaño de la matriz de iniciales (entero mayor o igual a 3): ", 3);
+        caracterMatriz = leerCaracter("Ingrese el carácter de la matriz: ");
+        caracterCarga = leerCaracter("Ingrese el carácter de carga: ");
+        barrasSonido = leerEntero("Ingrese la cantidad de barras de sonido (entero mayor a 0): ", 1);
+
+        System.out.println("=== Parámetros de recursión ===");
+        numeroRecursion = leerEntero("Ingrese n para el factorial y los conteos (entero mayor o igual a 0): ", 0);
+        numeroA = leerEntero("Ingrese el número a: ", Integer.MIN_VALUE);
+        numeroB = leerEntero("Ingrese el número b: ", Integer.MIN_VALUE);
+
+        System.out.println("=== Parámetros de autómatas ===");
+        cadenasAutomatas = new String[8];
+        cadenasAutomatas[0] = leerCadena("Ingrese una cadena para GA01 (a*b+c): ");
+        cadenasAutomatas[1] = leerCadena("Ingrese una cadena para GA02 (ab+ca): ");
+        cadenasAutomatas[2] = leerCadena("Ingrese una cadena para GA03 (a+/b+/c+): ");
+        cadenasAutomatas[3] = leerCadena("Ingrese una cadena para GA04 (1+/0+1*): ");
+        cadenasAutomatas[4] = leerCadena("Ingrese un número decimal para GA05: ");
+        cadenasAutomatas[5] = leerCadena("Ingrese una declaración de variable para GA06: ");
+        cadenasAutomatas[6] = leerCadena("Ingrese una palabra reservada para GA07: ");
+        cadenasAutomatas[7] = leerCadena("Ingrese una clave para GA08: ");
+        System.out.println();
+    }
+
+    /**
+     * Pide un número entero por consola que debe ser mayor o igual a un
+     * mínimo.
+     * <p>
+     * El bucle impide que el usuario ingrese algo que no sea un número entero
+     * o un número menor al mínimo.
+     *
+     * @param mensaje texto que se muestra al pedir el número
+     * @param minimo  valor mínimo permitido
+     * @return número entero ingresado por el usuario
+     */
+    public int leerEntero(String mensaje, int minimo) {
+        int numero = 0;
+        do {
+            System.out.print(mensaje);
+            while (!scanner.hasNextInt()) {
+                System.out.println("ERROR: " + scanner.next() + " no es un número entero.");
+                System.out.print(mensaje);
+            }
+            numero = scanner.nextInt();
+            scanner.nextLine();
+            if (numero < minimo) {
+                System.out.println("ERROR: el número debe ser mayor o igual a " + minimo);
+            }
+        } while (numero < minimo);
+        return numero;
+    }
+
+    /**
+     * Pide un texto por consola que no puede estar vacío.
+     *
+     * @param mensaje texto que se muestra al pedir el dato
+     * @return texto ingresado por el usuario, sin espacios en los extremos
+     */
+    public String leerTexto(String mensaje) {
+        String texto = "";
+        do {
+            System.out.print(mensaje);
+            texto = scanner.nextLine().trim();
+            if (texto.isEmpty()) {
+                System.out.println("ERROR: el texto no puede estar vacío");
+            }
+        } while (texto.isEmpty());
+        return texto;
+    }
+
+    /**
+     * Pide una cadena por consola para validarla con un autómata. Puede estar
+     * vacía, porque el autómata es el que decide si la acepta.
+     *
+     * @param mensaje texto que se muestra al pedir la cadena
+     * @return cadena ingresada por el usuario, sin espacios en los extremos
+     */
+    public String leerCadena(String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextLine().trim();
+    }
+
+    /**
+     * Pide un solo carácter por consola. Si el usuario escribe más de uno,
+     * se toma el primero.
+     *
+     * @param mensaje texto que se muestra al pedir el carácter
+     * @return carácter ingresado por el usuario
+     */
+    public char leerCaracter(String mensaje) {
+        return leerTexto(mensaje).charAt(0);
+    }
+
+    /**
+     * Pide una letra por consola.
+     * <p>
+     * El bucle impide que el usuario ingrese un número o un símbolo.
+     *
+     * @param mensaje texto que se muestra al pedir la letra
+     * @return letra ingresada por el usuario
+     */
+    public char leerLetra(String mensaje) {
+        char caracter = ' ';
+        do {
+            caracter = leerCaracter(mensaje);
+            if (!Character.isLetter(caracter)) {
+                System.out.println("ERROR: " + caracter + " no es una letra");
+            }
+        } while (!Character.isLetter(caracter));
+        return caracter;
+    }
+
+    /**
+     * Pide una vocal por consola.
+     * <p>
+     * El bucle impide que el usuario ingrese una consonante, un número o un
+     * símbolo.
+     *
+     * @param mensaje texto que se muestra al pedir la vocal
+     * @return vocal ingresada por el usuario
+     */
+    public char leerVocal(String mensaje) {
+        char caracter = ' ';
+        do {
+            caracter = leerCaracter(mensaje);
+            if ("aeiouAEIOU".indexOf(caracter) == -1) {
+                System.out.println("ERROR: " + caracter + " no es una vocal");
+            }
+        } while ("aeiouAEIOU".indexOf(caracter) == -1);
+        return caracter;
+    }
+
+    /**
+     * Pide el nombre completo por consola.
+     * <p>
+     * El bucle impide que el usuario ingrese menos de dos palabras, porque
+     * los ejercicios necesitan al menos un nombre y un apellido.
+     *
+     * @param mensaje texto que se muestra al pedir el nombre
+     * @return nombre completo ingresado por el usuario
+     */
+    public String leerNombreCompleto(String mensaje) {
+        String nombre = "";
+        do {
+            nombre = leerTexto(mensaje);
+            if (nombre.split(" +").length < 2) {
+                System.out.println("ERROR: ingrese al menos un nombre y un apellido");
+            }
+        } while (nombre.split(" +").length < 2);
+        return nombre;
+    }
+
+    /**
+     * Pide el porcentaje de carga de cada palabra del nombre, una por una.
+     * Solo se usan las primeras 4 palabras.
+     * <p>
+     * El bucle impide que el usuario ingrese un porcentaje mayor a 100.
+     *
+     * @param nombre nombre completo del que se toman las palabras
+     * @return porcentajes ingresados por el usuario
+     */
+    public int[] leerPorcentajes(String nombre) {
+        String[] palabras = nombre.split(" +");
+        int cantidad = palabras.length;
+        if (cantidad > 4) {
+            cantidad = 4;
+        }
+        int[] valores = new int[cantidad];
+        for (int i = 0; i < cantidad; i++) {
+            do {
+                valores[i] = leerEntero("Ingrese el porcentaje de carga de " + palabras[i] + " (0 a 100): ", 0);
+                if (valores[i] > 100) {
+                    System.out.println("ERROR: el porcentaje no puede ser mayor a 100");
+                }
+            } while (valores[i] > 100);
+        }
+        return valores;
+    }
+
+    /**
+     * Imprime las figuras desde la F01 hasta la F19 en orden.
+     */
+    public void imprimirFiguras() {
+        new FigurasController().mostrarFiguras(niveles);
+    }
+
+    /**
+     * Imprime los ejercicios de cadenas desde la C01 hasta la C09.
+     */
+    public void imprimirCadenas() {
+        new CadenasController().mostrarCadenas(frase, vocal, letra, scanner);
+    }
+
+    /**
+     * Imprime los ejercicios de arrays desde la A01 hasta la A05 en orden.
+     */
+    public void imprimirArrays() {
+        new ArraysController().mostrarArrays(nombreCompleto, porcentajes, tamanioMatriz, caracterMatriz);
+    }
+
+    /**
+     * Imprime las animaciones de carga desde la L01 hasta la L12 en orden.
+     */
+    public void imprimirLoading() {
+        new LoadingController().mostrarLoading(caracterCarga, nombreCompleto, barrasSonido);
+    }
+
+    /**
+     * Imprime los ejercicios de recursión desde la R01 hasta la R06 en orden.
+     */
+    public void imprimirRecursion() {
+        new RecursionController().mostrarRecursion(numeroRecursion, numeroA, numeroB);
+    }
+
+    /**
+     * Imprime el resultado de los autómatas desde el GA01 hasta el GA08 en
+     * orden.
+     */
+    public void imprimirAutomatas() {
+        new AutomatasController().mostrarAutomatas(cadenasAutomatas);
     }
 }
