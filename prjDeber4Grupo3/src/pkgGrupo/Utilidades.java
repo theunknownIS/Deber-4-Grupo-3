@@ -22,6 +22,33 @@ public class Utilidades {
     }
 
     /**
+     * Pide un parámetro por consola a través de un scanner.
+     * <p>
+     * El parámetro ingresado solo sera válido si es un número entero mayor a cero.
+     * El bucle impide que el usuario ingrese un parámetro negativo o que no sea un
+     * número entero positivo.
+     * 
+     * @return parámetro n ingresado por el usuario
+     */
+    public int leerParametroN() {
+        int n = 0;
+        do {
+            System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("ERROR: " + scanner.next() + " no es un número entero positivo.");
+                System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
+            }
+            n = scanner.nextInt();
+            scanner.nextLine();
+            if (n < 1) {
+                System.out.println("ERROR: n debe ser mayor a cero");
+            }
+        } while (n < 1);
+        System.out.println();
+        return n;
+    }
+
+    /**
      * Pide un número entero por consola que debe ser mayor o igual a un
      * mínimo.
      * <p>
