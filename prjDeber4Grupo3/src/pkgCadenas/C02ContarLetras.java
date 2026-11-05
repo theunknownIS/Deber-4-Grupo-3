@@ -13,7 +13,7 @@ public class C02ContarLetras {
 
         for (int i = 0; i < texto.length(); i++) {
             char letra = texto.charAt(i);
-            if (Character.isLetter(letra) && !esVocal(letra)) {
+            if (Character.isLetter(letra) && !g3EsVocal(letra)) {
                 consonantes++;
             }
         }
@@ -21,7 +21,7 @@ public class C02ContarLetras {
         return consonantes;
     }
 
-    private boolean esVocal(char letra) {
+    private boolean g3EsVocal(char letra) {
         if(letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
             return true;
         }

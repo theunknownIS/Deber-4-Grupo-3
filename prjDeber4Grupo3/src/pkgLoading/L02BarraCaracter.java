@@ -24,20 +24,20 @@ public class L02BarraCaracter {
                         barra += " ";
                     }
                 }
-                barra += "]" + porcentaje + "%";
+                barra += "] " + porcentaje + "%";
                 System.out.print(barra);
                 System.out.flush();
-                esperar(tiempoEspera);
+                g3Esperar(tiempoEspera);
             }
         }
         System.out.println();
     }
 
-    private void esperar(int milisegundos) {
+    private void g3Esperar(int milisegundos) {
         try {
             Thread.sleep(milisegundos);
         } catch (InterruptedException exception) {
-            System.out.print("Se irrumpio espera");
+            Thread.currentThread().interrupt();
         }
     }
 }

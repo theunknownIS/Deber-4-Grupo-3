@@ -3,11 +3,10 @@ package pkgArrays;
 /**
  * A01. Barras de carga por cada palabra del nombre (maximo 4: dos nombres y
  * dos apellidos).
- * Se separa el nombre con split en un arreglo de palabras y el porcentaje de
- * cada una se reparte en partes iguales segun cuantas palabras hay:
- * porcentaje de la palabra i = 100 * (i + 1) / cantidad (la ultima siempre
- * queda en 100). Con 2 palabras: 50 y 100. Con 3: 33, 67 y 100. Con 4: 25, 50,
- * 75 y 100. La barra mide 15 caracteres: llenos = 15 * porcentaje / 100
+ * Se separa el nombre con split en un arreglo de palabras y cada palabra usa
+ * el porcentaje de carga que ingresa el usuario, en el mismo orden. Ejemplo:
+ * con 100 75 50 25 la primera palabra carga al 100% y la ultima al 25%.
+ * La barra mide 15 caracteres: llenos = 15 * porcentaje / 100
  * redondeado (con > en la punta) y de la palabra se muestran
  * largo * porcentaje / 100 letras. Usa for.
  *
@@ -34,18 +33,24 @@ public class A01BarrasNombre {
     }
 
     /**
-     * Muestra una barra por palabra del nombre. Si el nombre tiene mas de 4
-     * palabras, solo se usan las primeras 4.
+     * Muestra una barra por palabra del nombre con el porcentaje ingresado
+     * para cada una. Si el nombre tiene mas de 4 palabras, solo se usan las
+     * primeras 4. Si hay menos porcentajes que palabras, solo se muestran
+     * las palabras que tienen porcentaje.
+     *
+     * @param porcentajes porcentaje de carga de cada palabra (0 a 100)
      */
-    public void g3A01MostrarBarrasNombre() {
+    public void g3A01MostrarBarrasNombre(int[] porcentajes) {
         final int longitud = 15;
         final int maximo = 4;
         String[] palabras = nombre.trim().split("\\s+");
-        int cantidad = Math.min(palabras.length, maximo);
-        int[] porcentajes = new int[cantidad];
+        int cantidad = Math.min(Math.min(palabras.length, porcentajes.length), maximo);
 
         for (int i = 0; i < cantidad; i++) {
-            porcentajes[i] = (int) Math.round(100.0 * (i + 1) / cantidad);
+            if (porcentajes[i] < 0 || porcentajes[i] > 100) {
+                System.out.println("Error: el porcentaje debe estar entre 0 y 100");
+                return;
+            }
         }
 
         for (int i = 0; i < cantidad; i++) {

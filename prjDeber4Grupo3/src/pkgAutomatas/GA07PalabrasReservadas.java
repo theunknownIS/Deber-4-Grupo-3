@@ -6,10 +6,6 @@ package pkgAutomatas;
  * @author Teran.Camila
  */
 public class GA07PalabrasReservadas {
-    /**
-     * @param cadena texto a validar
-    */
-
     private static final int INICIO = 0;
     private static final int PALABRA = 1;
     private static final int ESPACIO = 2;
@@ -18,6 +14,16 @@ public class GA07PalabrasReservadas {
 
     private String[] lenguaje = { "for", "if", "else", "ifelse", "foreach" };
 
+    /**
+     * Recorre la cadena con un autómata de estados. Lee las letras de la
+     * palabra y, al terminar, revisa que pertenezca al lenguaje. Después de
+     * la palabra acepta espacios y luego '(' (o '{' para else). La palabra
+     * else también se acepta sola.
+     *
+     * @param cadena texto a validar
+     * @return true si la cadena empieza con una palabra reservada válida,
+     *         false en caso contrario
+     */
     public boolean g3Ga07ValidarPalabrasReservadas(String cadena) {
         int estado = INICIO;
         String palabra = "";
@@ -36,7 +42,7 @@ public class GA07PalabrasReservadas {
                 case PALABRA:
                     if (Character.isLetter(c)) {
                         palabra += c;
-                    } else if (!perteneceAlLenguaje(palabra)) {
+                    } else if (!g3PerteneceAlLenguaje(palabra)) {
                         estado = ERROR;
                     } else if (c == ' ') {
                         estado = ESPACIO;
@@ -68,7 +74,13 @@ public class GA07PalabrasReservadas {
         return palabra.equals("else") && (estado == PALABRA || estado == ESPACIO);
     }
 
-    private boolean perteneceAlLenguaje(String palabra) {
+    /**
+     * Revisa si la palabra está en el lenguaje.
+     *
+     * @param palabra palabra leída de la cadena
+     * @return true si la palabra pertenece al lenguaje
+     */
+    private boolean g3PerteneceAlLenguaje(String palabra) {
         for (int i = 0; i < lenguaje.length; i++) {
             if (lenguaje[i].equals(palabra)) {
                 return true;

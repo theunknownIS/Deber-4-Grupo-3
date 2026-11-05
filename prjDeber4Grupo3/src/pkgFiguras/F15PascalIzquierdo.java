@@ -17,6 +17,10 @@ public class F15PascalIzquierdo {
      */
     public void g3F15DibujarPascalIzquierdo(int n) {
         final int limite = 67;
+        if (n < 1) {
+            System.out.println("El tamaño debe ser mayor a 0");
+            return;
+        }
         if (n > limite) {
             System.out.println("Límite del tipo de dato alcanzado (máximo n = " + limite + ")");
             return;

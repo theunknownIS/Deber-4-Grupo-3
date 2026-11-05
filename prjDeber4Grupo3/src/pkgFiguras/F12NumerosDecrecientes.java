@@ -13,7 +13,7 @@ public class F12NumerosDecrecientes {
         }
         for (int fila = n; fila >= 1; fila--) {
             for (int numero = 1; numero <= fila; numero++) {
-                System.out.print(numero + " ");
+                System.out.print(numero);
             }
             System.out.println();
         }

@@ -11,7 +11,7 @@ public class C07MayusculasSinJ {
  * @return resultado de la frase en mayúsculas sin la letra J
  */
     public String g3C07MayusculasSinJ(String frase) {
-        String resultado =" ";
+        String resultado = "";
         String texto = frase.toUpperCase();
         for (int i = 0; i < texto.length(); i++) {
             char letra = texto.charAt(i);

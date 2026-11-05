@@ -16,7 +16,7 @@ public class L12FiguraDesplazada {
      *
      * @throws InterruptedException si se interrumpe la pausa entre cuadros
      */
-    public void g3L12AnimarFiguraDesplazada() throws InterruptedException {
+    public void g3L12AnimarFiguraDesplazada() {
         String[] figura = { "   \\|||/", "   (> <)", "ooO-(_)-Ooo" };
         int max = 20;
         for (int k = 0; k <= 2 * max; k++) {
@@ -30,7 +30,11 @@ public class L12FiguraDesplazada {
                 }
                 System.out.print(figura[f] + "\u001B[K\n");
             }
-            Thread.sleep(80);
+            try {
+                Thread.sleep(80);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 }

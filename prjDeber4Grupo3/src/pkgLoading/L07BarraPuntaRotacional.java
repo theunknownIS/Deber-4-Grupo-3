@@ -6,7 +6,7 @@ package pkgLoading;
 */
 public class L07BarraPuntaRotacional {
     private int largoBarra = 20;
-    private char[] simbollos = {'\\', '|', '/', '-', '|'};
+    private char[] simbolos = {'\\', '|', '/', '-', '|'};
     private int tiempoEspera = 400;
 
     public void g3L07BarraPuntaRotacional() {
@@ -19,25 +19,25 @@ public class L07BarraPuntaRotacional {
                     if (posicion < posicionesLlenas) {
                         barra += "=";
                     } else if (posicion == posicionesLlenas && porcentaje < 100) {
-                        barra += simbollos[numeroDibujo % 5];
+                        barra += simbolos[numeroDibujo % 5];
                     } else {
                         barra += " ";
                     }
                 }
-                barra += "]" + porcentaje + "%";
+                barra += "] " + porcentaje + "%";
                 System.out.print(barra);
                 System.out.flush();
-                esperar(tiempoEspera);
+                g3Esperar(tiempoEspera);
             }
         }
         System.out.println();
     }
 
-    private void esperar(int milisegundos) {
+    private void g3Esperar(int milisegundos) {
         try {
             Thread.sleep(milisegundos);
         } catch (InterruptedException exception) {
-            System.out.print("Se irrumpio espera");
+            Thread.currentThread().interrupt();
         }
     }
 }

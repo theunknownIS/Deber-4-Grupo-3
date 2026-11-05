@@ -15,7 +15,7 @@ public class F07EscaleraDescendente {
         System.out.println("___");
         for (int fila = 1; fila < n; fila++) {
             for (int columna = 0; columna < fila; columna++) {
-                System.out.print("   ");
+                System.out.print("    ");
             }
             System.out.println("|___");
         }

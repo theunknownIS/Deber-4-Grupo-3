@@ -10,16 +10,16 @@ public class R02Suma {
  * @param b segundo número
 */
     public void g3R02Suma(int primerNumero, int segundoNumero) {
-        int resultado = SumaRecursiva(primerNumero, segundoNumero);
+        int resultado = g3R02SumaRecursiva(primerNumero, segundoNumero);
         System.out.println("La suma de " + primerNumero + " y " + segundoNumero + " es: " + resultado);
     }   
-    public int SumaRecursiva(int primerNumero, int segundoNumero) { 
+    public int g3R02SumaRecursiva(int primerNumero, int segundoNumero) { 
         if (segundoNumero == 0) {
             return primerNumero;
         } else if (segundoNumero > 0) {
-            return SumaRecursiva(primerNumero , segundoNumero - 1) + 1;
+            return g3R02SumaRecursiva(primerNumero , segundoNumero - 1) + 1;
         } else {
-            return SumaRecursiva(primerNumero, segundoNumero + 1) - 1;
+            return g3R02SumaRecursiva(primerNumero, segundoNumero + 1) - 1;
         }
     }
 }

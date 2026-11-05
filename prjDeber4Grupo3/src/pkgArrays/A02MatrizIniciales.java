@@ -25,8 +25,8 @@ public class A02MatrizIniciales {
         char inicialNombre = Character.toUpperCase(nombre.charAt(0));
         char inicialApellido = Character.toUpperCase(apellido.charAt(0));
 
-        char[][] letra1 = construirLetra(inicialNombre, tamanio, caracter);
-        char[][] letra2 = construirLetra(inicialApellido, tamanio, caracter);
+        char[][] letra1 = g3ConstruirLetra(inicialNombre, tamanio, caracter);
+        char[][] letra2 = g3ConstruirLetra(inicialApellido, tamanio, caracter);
 
         System.out.println("Iniciales: " + inicialNombre + inicialApellido);
         for (int f = 0; f < tamanio; f++) {
@@ -41,11 +41,11 @@ public class A02MatrizIniciales {
         }
     }
 
-    private char[][] construirLetra(char letra, int n, char caracter) {
+    private char[][] g3ConstruirLetra(char letra, int n, char caracter) {
         char[][] matriz = new char[n][n];
         for (int f = 0; f < n; f++) {
             for (int c = 0; c < n; c++) {
-                if (estaPintada(letra, f, c, n)) {
+                if (g3EstaPintada(letra, f, c, n)) {
                     matriz[f][c] = caracter;
                 } else {
                     matriz[f][c] = ' ';
@@ -55,7 +55,7 @@ public class A02MatrizIniciales {
         return matriz;
     }
 
-    private boolean estaPintada(char letra, int f, int c, int n) {
+    private boolean g3EstaPintada(char letra, int f, int c, int n) {
         int ultimo = n - 1;
         int medio = n / 2;
         switch (letra) {
