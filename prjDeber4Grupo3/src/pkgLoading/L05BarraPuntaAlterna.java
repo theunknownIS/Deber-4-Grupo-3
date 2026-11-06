@@ -16,7 +16,7 @@ public class L05BarraPuntaAlterna {
      *
      * @throws InterruptedException si se interrumpe la pausa entre cuadros
      */
-    public void g3L05AnimarBarraPuntaAlterna() throws InterruptedException {
+    public void g3L05AnimarBarraPuntaAlterna() {
         int largo = 20;
         for (int k = 0; k <= largo; k++) {
             System.out.print("\r[");
@@ -30,7 +30,11 @@ public class L05BarraPuntaAlterna {
                 }
             }
             System.out.print("] " + (k * 100 / largo) + "%");
-            Thread.sleep(80);
+            try {
+                Thread.sleep(80);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
         System.out.println();
     }

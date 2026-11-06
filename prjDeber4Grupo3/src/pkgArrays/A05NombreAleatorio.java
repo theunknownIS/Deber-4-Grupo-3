@@ -2,7 +2,7 @@ package pkgArrays;
 
 /**
  * A05. Matriz cuadrada con las letras del nombre completo en posiciones
- * aleatorias. El tamaño es la cantidad de letras del nombre (6 x 6). Cada
+ * aleatorias. El tamaño es la cantidad de letras del nombre (Steven: 6 x 6). Cada
  * letra se coloca en una fila y columna al azar; si la casilla ya estaba
  * ocupada se pone un *. Después de cada letra se muestra la matriz y se
  * espera medio segundo para ver el proceso.
@@ -11,15 +11,13 @@ package pkgArrays;
  */
 public class A05NombreAleatorio {
 
-    private String nombre = "Steven";
-    private String apellido = "Robles";
-
     /**
      * Muestra paso a paso cómo se colocan las letras en la matriz.
      *
-     * @throws InterruptedException si se interrumpe la pausa entre cuadros
+     * @param nombre   nombre de la persona; su largo define el tamaño
+     * @param apellido apellido de la persona
      */
-    public void g3A05MostrarNombreAleatorio() throws InterruptedException {
+    public void g3A05MostrarNombreAleatorio(String nombre, String apellido) {
         String letras = apellido + nombre;
         int tam = nombre.length();
         char[][] m = new char[tam][tam];
@@ -43,7 +41,11 @@ public class A05NombreAleatorio {
                 System.out.println();
             }
             System.out.println();
-            Thread.sleep(500);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 }

@@ -14,6 +14,12 @@ import pkgAxel.SerieOblongos;
 import pkgAxel.SeriePotenciasDos;
 import pkgAxel.SeriePrimos;
 import pkgAxel.SerieProgresionAritmetica;
+import pkgFiguras.FigurasController;
+import pkgCadenas.CadenasController;
+import pkgArrays.ArraysController;
+import pkgLoading.LoadingController;
+import pkgRecursion.RecursionController;
+import pkgAutomatas.AutomatasController;
 
 /**
  * GrupoController
@@ -25,43 +31,38 @@ import pkgAxel.SerieProgresionAritmetica;
  */
 public class GrupoController {
     private Scanner scanner = new Scanner(System.in);
+    private Utilidades utilidades = new Utilidades(scanner);
     private IsmaelSerie ismael = new IsmaelSerie();
     private CamilaSerie camila = new CamilaSerie();
     private KleimerSerie kleimer = new KleimerSerie();
     private StevenSerie steven = new StevenSerie();
-
-    /**
-     * Pide un parámetro por consola a través de un scanner.
-     * <p>
-     * El parámetro ingresado solo sera válido si es un número entero mayor a cero.
-     * El bucle impide que el usuario ingrese un parámetro negativo o que no sea un
-     * número entero positivo.
-     * 
-     * @return parámetro n ingresado por el usuario
-     */
-    public int leerParametroN() {
-        int n = 0;
-        do {
-            System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
-            while (!scanner.hasNextInt()) {
-                System.out.println("ERROR: " + scanner.next() + " no es un número entero positivo.");
-                System.out.print("Ingrese un parámetro n (entero mayor a 0): ");
-            }
-            n = scanner.nextInt();
-            scanner.nextLine();
-            if (n < 1) {
-                System.out.println("ERROR: n debe ser mayor a cero");
-            }
-        } while (n < 1);
-        System.out.println();
-        return n;
-    }
+    private int niveles;
+    private String frase;
+    private char vocal;
+    private char letra;
+    private String nombreCompleto;
+    private int[] porcentajes;
+    private int tamanioMatriz;
+    private char caracterMatriz;
+    private char caracterCarga;
+    private int barrasSonido;
+    private int numeroRecursion;
+    private int numeroA;
+    private int numeroB;
+    private String[] cadenasAutomatas;
 
     /**
      * @return lector de consola compartido
      */
     public Scanner getScanner() {
         return scanner;
+    }
+
+    /**
+     * @return utilidades para leer datos por consola
+     */
+    public Utilidades getUtilidades() {
+        return utilidades;
     }
 
     /**
@@ -165,5 +166,93 @@ public class GrupoController {
         System.out.print("SC17. Símbolos: ");
         steven.g3Sc17MostrarSimbolos(n);
         System.out.println();
+    }
+
+    /**
+     * Pide por consola todos los parámetros de los ejercicios de la parte 2
+     * antes de ejecutarlos.
+     * <p>
+     * Se piden en orden: niveles de las figuras, frase, vocal y letra para
+     * las cadenas, nombre completo, porcentajes de carga, tamaño y carácter
+     * de la matriz, carácter de carga, cantidad de barras de sonido, números
+     * de la recursión y una cadena por cada autómata. El C08 es el único que
+     * pide datos durante su ejecución.
+     */
+    public void leerParametrosParte2() {
+        System.out.println("=== Parámetros de figuras ===");
+        niveles = utilidades.leerEntero("Ingrese el tamaño/niveles de las figuras (entero mayor a 0): ", 1);
+
+        System.out.println("=== Parámetros de cadenas ===");
+        frase = utilidades.leerTexto("Ingrese una frase: ");
+        vocal = utilidades.leerVocal("Ingrese una vocal: ");
+        letra = utilidades.leerLetra("Ingrese una letra: ");
+
+        System.out.println("=== Parámetros de arrays y loading ===");
+        nombreCompleto = utilidades.leerNombreCompleto("Ingrese su nombre completo (nombre y apellido): ");
+        porcentajes = utilidades.leerPorcentajes(nombreCompleto);
+        tamanioMatriz = utilidades.leerEntero("Ingrese el tamaño de la matriz de iniciales (entero mayor o igual a 3): ", 3);
+        caracterMatriz = utilidades.leerCaracter("Ingrese el carácter de la matriz: ");
+        caracterCarga = utilidades.leerCaracter("Ingrese el carácter de carga: ");
+        barrasSonido = utilidades.leerEntero("Ingrese la cantidad de barras de sonido (entero mayor a 0): ", 1);
+
+        System.out.println("=== Parámetros de recursión ===");
+        numeroRecursion = utilidades.leerEntero("Ingrese n para el factorial y los conteos (entero mayor o igual a 0): ", 0);
+        numeroA = utilidades.leerEntero("Ingrese el número a: ", Integer.MIN_VALUE);
+        numeroB = utilidades.leerEntero("Ingrese el número b: ", Integer.MIN_VALUE);
+
+        System.out.println("=== Parámetros de autómatas ===");
+        cadenasAutomatas = new String[8];
+        cadenasAutomatas[0] = utilidades.leerCadena("Ingrese una cadena para GA01 (a*b+c): ");
+        cadenasAutomatas[1] = utilidades.leerCadena("Ingrese una cadena para GA02 (ab+ca): ");
+        cadenasAutomatas[2] = utilidades.leerCadena("Ingrese una cadena para GA03 (a+/b+/c+): ");
+        cadenasAutomatas[3] = utilidades.leerCadena("Ingrese una cadena para GA04 (1+/0+1*): ");
+        cadenasAutomatas[4] = utilidades.leerCadena("Ingrese un número decimal para GA05: ");
+        cadenasAutomatas[5] = utilidades.leerCadena("Ingrese una declaración de variable para GA06: ");
+        cadenasAutomatas[6] = utilidades.leerCadena("Ingrese una palabra reservada para GA07: ");
+        cadenasAutomatas[7] = utilidades.leerCadena("Ingrese una clave para GA08: ");
+        System.out.println();
+    }
+
+    /**
+     * Imprime las figuras desde la F01 hasta la F19 en orden.
+     */
+    public void imprimirFiguras() {
+        new FigurasController().mostrarFiguras(niveles);
+    }
+
+    /**
+     * Imprime los ejercicios de cadenas desde la C01 hasta la C09.
+     */
+    public void imprimirCadenas() {
+        new CadenasController().mostrarCadenas(frase, vocal, letra, scanner);
+    }
+
+    /**
+     * Imprime los ejercicios de arrays desde la A01 hasta la A05 en orden.
+     */
+    public void imprimirArrays() {
+        new ArraysController().mostrarArrays(nombreCompleto, porcentajes, tamanioMatriz, caracterMatriz);
+    }
+
+    /**
+     * Imprime las animaciones de carga desde la L01 hasta la L12 en orden.
+     */
+    public void imprimirLoading() {
+        new LoadingController().mostrarLoading(caracterCarga, nombreCompleto, barrasSonido);
+    }
+
+    /**
+     * Imprime los ejercicios de recursión desde la R01 hasta la R06 en orden.
+     */
+    public void imprimirRecursion() {
+        new RecursionController().mostrarRecursion(numeroRecursion, numeroA, numeroB);
+    }
+
+    /**
+     * Imprime el resultado de los autómatas desde el GA01 hasta el GA08 en
+     * orden.
+     */
+    public void imprimirAutomatas() {
+        new AutomatasController().mostrarAutomatas(cadenasAutomatas);
     }
 }

@@ -15,7 +15,7 @@ public class L10DescargaArchivo {
      *
      * @throws InterruptedException si se interrumpe la pausa entre cuadros
      */
-    public void g3L10AnimarDescargaArchivo() throws InterruptedException {
+    public void g3L10AnimarDescargaArchivo() {
         final String VERDE = "\u001B[32m";
         final String RESET = "\u001B[0m";
         int largo = 20;
@@ -37,7 +37,11 @@ public class L10DescargaArchivo {
                 System.out.print(" ");
             }
             System.out.print(String.format(" %.1f / %.1f kB", descargado, total));
-            Thread.sleep(80);
+            try {
+                Thread.sleep(80);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
         System.out.println();
     }

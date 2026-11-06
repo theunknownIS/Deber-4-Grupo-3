@@ -2,17 +2,16 @@ package pkgAutomatas;
 
 /**
  * GA08. Validador de clave. Una clave es válida si tiene al menos una
- * mayúscula, una minúscula, un número y un carácter especial (ni letra ni
- * número). Se recorre la clave una sola vez con cuatro banderas que pasan
- * a verdadero cuando aparece cada tipo; al final deben estar las cuatro
- * en verdadero.
+ * mayúscula, una minúscula y un número. Se recorre la clave una sola vez
+ * con tres banderas que pasan a verdadero cuando aparece cada tipo; al
+ * final deben estar las tres en verdadero.
  *
  * @author Robles.Steven
  */
 public class GA08ValidadorClave {
 
     /**
-     * Valida si la clave cumple los cuatro requisitos.
+     * Valida si la clave cumple los tres requisitos.
      *
      * @param clave texto que se quiere validar
      * @return true si la clave es válida, false si no lo es
@@ -21,7 +20,6 @@ public class GA08ValidadorClave {
         boolean tieneMayus = false;
         boolean tieneMinus = false;
         boolean tieneNumero = false;
-        boolean tieneEspecial = false;
         for (int i = 0; i < clave.length(); i++) {
             char c = clave.charAt(i);
             if (Character.isUpperCase(c)) {
@@ -30,10 +28,8 @@ public class GA08ValidadorClave {
                 tieneMinus = true;
             } else if (Character.isDigit(c)) {
                 tieneNumero = true;
-            } else {
-                tieneEspecial = true;
             }
         }
-        return tieneMayus && tieneMinus && tieneNumero && tieneEspecial;
+        return tieneMayus && tieneMinus && tieneNumero;
     }
 }

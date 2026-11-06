@@ -5,9 +5,16 @@ public class App {
         GrupoController controladorGrupal = new GrupoController();
         int n = 0;
         controladorGrupal.imprimirPresentacion();
-        n = controladorGrupal.leerParametroN();
+        n = controladorGrupal.getUtilidades().leerParametroN();
+        controladorGrupal.leerParametrosParte2();
         controladorGrupal.imprimirSeriesNumericas(n);
         controladorGrupal.imprimirSeriesCaracteres(n);
+        controladorGrupal.imprimirFiguras();
+        controladorGrupal.imprimirCadenas();
+        controladorGrupal.imprimirArrays();
+        controladorGrupal.imprimirLoading();
+        controladorGrupal.imprimirRecursion();
+        controladorGrupal.imprimirAutomatas();
 
     }
 }
